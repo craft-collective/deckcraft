@@ -29,6 +29,8 @@ before publishing the app migration, so fresh CI and release builds can fetch it
 Run `cargo test -p deckcraft-pdf` for export contracts and `cargo xtask ci` for all workspace
 gates. PDF contract tests also run with `wasm-bindgen-test-runner` on
 `wasm32-unknown-unknown`. The `pdf-deps` gate verifies the two writer source pins,
-retained Krilla image/text features and the development-only parser boundary.
+retained Krilla image/text features and the development-only parser boundary. A build against
+a fork of craft-libs sets `CRAFT_LIBS_GIT` to the fork's URL, as Cargo.lock records it, and
+`CRAFT_LIBS_REV` to its full commit hash, and the gate then requires that source for the pins.
 
 This migration does not add vector slide artwork or change text-shaping/ToUnicode policy.
