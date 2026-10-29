@@ -21,6 +21,7 @@ usage: cargo xtask <command>
 commands:
   assets          check that every icon/image/font/asset is attributed in ATTRIBUTION.md
   pdf-deps        verify pinned writer sources and the production feature boundary
+                  (CRAFT_LIBS_GIT and CRAFT_LIBS_REV name a fork of craft-libs instead)
   layers          enforce the crate dependency layering (plan/architecture.md §3)
   wasm            cargo check --target wasm32-unknown-unknown for the wasm-safe crates (one call)
   test            workspace tests (cargo nextest when installed, else cargo test), then doctests
